@@ -1,65 +1,48 @@
-package Model;
+package model;
 
+public class Customer {
 
-import java.time.LocalDate;
-
-import javax.persistence.DiscriminatorValue;
-import javax.persistence.Entity;
-
-@Entity
-@DiscriminatorValue("customer")
-public class Customer extends User{
-	
-       private String customerName;
-       private String customerAddress;
-       private long customerPhone;
-       private LocalDate customerDob;
-       private String customerGender;
-      public Customer(){
-    	  
-      }
-       
-       
-	public Customer(String userName, String password, String customerName, String customerAddress, long customerPhone, LocalDate customerDob,
-			String customerGender) {
-		super(userName, password);
-		this.customerName = customerName;
-		this.customerAddress = customerAddress;
-		this.customerPhone = customerPhone;
-		this.customerDob = customerDob;
-		this.customerGender = customerGender;
-	
-       
-
-}
-
-
-
+	private int  customerId;
+	private String customerName;
+	private  long customerphone;
+	private Address address;
+	private Order order;
+	public int getCustomerId() {
+		return customerId;
+	}
+	public void setCustomerId(int customerId) {
+		this.customerId = customerId;
+	}
 	public String getCustomerName() {
 		return customerName;
 	}
-
-
-
-	public String getCustomerAddress() {
-		return customerAddress;
+	public void setCustomerName(String customerName) {
+		this.customerName = customerName;
 	}
-
-
-
-	public long getCustomerPhone() {
-		return customerPhone;
+	public long getCustomerphone() {
+		return customerphone;
 	}
-
-
-
-	public LocalDate getCustomerDob() {
-		return customerDob;
+	public void setCustomerphone(long customerphone) {
+		this.customerphone = customerphone;
 	}
-
-
-
-	public String getCustomerGender() {
-		return customerGender;
+	public Address getAddress() {
+		return address;
 	}
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+	public Order getOrder() {
+		return order;
+	}
+	public void setOrder(Order order) {
+		this.order = order;
+	}
+	@Override
+	public String toString() {
+		return "Customer [customerId=" + customerId + ", customerName=" + customerName + ", customerphone="
+				+ customerphone + ", address=" + address + ", order=" + order + "]";
+	}
+	
+	
+	
 }
